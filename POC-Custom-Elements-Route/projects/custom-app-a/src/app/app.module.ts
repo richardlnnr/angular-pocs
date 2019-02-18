@@ -1,18 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
+
+import {
+  MatGridListModule, MatCardModule, MatMenuModule, MatIconModule,
+  MatButtonModule, MatTabsModule, MatListModule
+} from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PeopleListComponent } from './people-list/people-list.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatListModule} from '@angular/material/list';
 import { PeopleDashboardComponent } from './people-dashboard/people-dashboard.component';
-import {
-  MatGridListModule, MatCardModule, MatMenuModule, MatIconModule,
-  MatButtonModule, MatTabsModule
-} from '@angular/material';
-import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,15 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatTabsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [
+    AppComponent
+  ]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+    const customElement = createCustomElement(AppComponent, { injector: this.injector });
+    customElements.define('ngx-app-a', customElement);
+  }
+
+  ngDoBootstrap() {}
+ }
