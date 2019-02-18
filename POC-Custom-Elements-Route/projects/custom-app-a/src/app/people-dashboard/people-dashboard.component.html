@@ -1,0 +1,13 @@
+<div class="grid-container">
+  <mat-grid-list cols="3" rowHeight="150px">
+    <mat-grid-tile *ngFor="let person of people" [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <img mat-card-avatar [src]="getAvatar(person.name)">	
+          <mat-card-title>{{person.name}}</mat-card-title>
+          <mat-card-subtitle>{{person.job}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
