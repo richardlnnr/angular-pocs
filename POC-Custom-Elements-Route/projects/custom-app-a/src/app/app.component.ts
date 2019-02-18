@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'custom-app-a';
+  navLinks = [
+    {
+      label: 'People list',
+      path: 'list'
+    },
+    {
+      label: 'People dashboard',
+      path: 'dashboard'
+    }
+  ];
 }

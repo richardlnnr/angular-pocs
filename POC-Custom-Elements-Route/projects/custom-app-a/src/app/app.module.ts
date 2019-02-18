@@ -8,7 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatListModule} from '@angular/material/list';
 import { PeopleDashboardComponent } from './people-dashboard/people-dashboard.component';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import {
+  MatGridListModule, MatCardModule, MatMenuModule, MatIconModule,
+  MatButtonModule, MatTabsModule
+} from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
@@ -27,7 +30,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    LayoutModule
+    LayoutModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
