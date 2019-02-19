@@ -10,6 +10,13 @@ import { map } from 'rxjs/operators';
 })
 export class MainNavigationComponent {
 
+  navLinks = [
+    {
+      label: 'Custom app a',
+      path: 'custom-app-a'
+    }
+  ];
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)

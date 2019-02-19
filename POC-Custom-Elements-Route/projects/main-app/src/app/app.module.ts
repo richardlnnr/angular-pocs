@@ -6,10 +6,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { CustomAppAComponent } from './custom-app-a/custom-app-a.component';
 
 @NgModule({
   declarations: [
-    MainNavigationComponent
+    MainNavigationComponent,
+    CustomAppAComponent
   ],
   imports: [
     BrowserModule,
