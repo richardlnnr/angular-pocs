@@ -5,13 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import {
+  MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
+  MatListModule, MatGridListModule, MatCardModule, MatMenuModule
+} from '@angular/material';
 import { CustomAppAComponent } from './custom-app-a/custom-app-a.component';
+import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 
 @NgModule({
   declarations: [
     MainNavigationComponent,
-    CustomAppAComponent
+    CustomAppAComponent,
+    MainDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,10 @@ import { CustomAppAComponent } from './custom-app-a/custom-app-a.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [MainNavigationComponent],

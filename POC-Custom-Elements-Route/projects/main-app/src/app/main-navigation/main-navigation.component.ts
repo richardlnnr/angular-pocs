@@ -14,6 +14,10 @@ export class MainNavigationComponent {
     {
       label: 'Custom app a',
       path: 'custom-app-a'
+    },
+    {
+      label: 'Dashboard',
+      path: 'dashboard'
     }
   ];
 
