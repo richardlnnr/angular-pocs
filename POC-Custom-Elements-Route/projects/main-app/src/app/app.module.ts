@@ -1,20 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainNavigationComponent } from './main-navigation/main-navigation.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import {
+  MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
+  MatListModule, MatGridListModule, MatCardModule, MatMenuModule
+} from '@angular/material';
+import { CustomAppAComponent } from './custom-app-a/custom-app-a.component';
+import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    MainNavigationComponent,
+    CustomAppAComponent,
+    MainDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MainNavigationComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }

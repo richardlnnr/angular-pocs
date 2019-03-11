@@ -3,13 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
+    "start": "./node_modules/.bin/ng serve main-app --host 0.0.0.0 --proxy-config proxy.config.js",
     "build:custom-app-a": "ng build custom-app-a --prod",
-    "pack:custom-app-a": "node projects/custom-app-a/copy-bundles"
+    "pack:custom-app-a": "node projects/custom-app-a/copy-bundles",
+    "package:custom-app-a": "npm run build:custom-app-a && npm run pack:custom-app-a"
   },
   "private": true,
   "dependencies": {
