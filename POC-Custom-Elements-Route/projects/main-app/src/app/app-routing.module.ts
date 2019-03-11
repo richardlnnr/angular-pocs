@@ -4,7 +4,16 @@ import { CustomAppAComponent } from './custom-app-a/custom-app-a.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 
 const routes: Routes = [
-  { path: 'custom-app-a', component: CustomAppAComponent },
+  {
+    path: 'custom-app-a',
+    component: CustomAppAComponent,
+    children: [
+      {
+        path: ':id',
+        component: CustomAppAComponent
+      }
+    ]
+  },
   { path: 'dashboard', component: MainDashboardComponent }
 ];
 
