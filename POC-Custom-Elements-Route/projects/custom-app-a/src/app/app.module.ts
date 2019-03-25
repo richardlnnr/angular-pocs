@@ -5,7 +5,7 @@ import { createCustomElement } from '@angular/elements';
 
 import {
   MatGridListModule, MatCardModule, MatMenuModule, MatIconModule,
-  MatButtonModule, MatTabsModule, MatListModule
+  MatButtonModule, MatTabsModule, MatListModule, MatInputModule, MatSelectModule, MatRadioModule
 } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 
@@ -14,12 +14,15 @@ import { AppComponent } from './app.component';
 import { PeopleListComponent } from './people-list/people-list.component';
 
 import { PeopleDashboardComponent } from './people-dashboard/people-dashboard.component';
+import { PeopleDetailComponent } from './people-detail/people-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeopleListComponent,
-    PeopleDashboardComponent
+    PeopleDashboardComponent,
+    PeopleDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,11 @@ import { PeopleDashboardComponent } from './people-dashboard/people-dashboard.co
     MatIconModule,
     MatButtonModule,
     LayoutModule,
-    MatTabsModule
+    MatTabsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ],
   providers: [],
   entryComponents: [
