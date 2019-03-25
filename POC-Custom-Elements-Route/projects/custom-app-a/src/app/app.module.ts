@@ -16,6 +16,7 @@ import { PeopleListComponent } from './people-list/people-list.component';
 import { PeopleDashboardComponent } from './people-dashboard/people-dashboard.component';
 import { PeopleDetailComponent } from './people-detail/people-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PeopleServiceService } from './people-service.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatRadioModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    PeopleServiceService
+  ],
   entryComponents: [
     AppComponent
   ]
