@@ -1,5 +1,5 @@
 <mat-list>
-  <mat-list-item *ngFor="let person of people">
+  <mat-list-item class="clicked" *ngFor="let person of people" [routerLink]="['./', person.id]">
     <img matListAvatar [src]="getAvatar(person.name)" alt="...">
     <h3 matLine> {{person.name}} </h3>
     <p matLine>

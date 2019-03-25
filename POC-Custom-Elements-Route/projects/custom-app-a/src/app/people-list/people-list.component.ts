@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleServiceService } from '../people-service.service';
 
 @Component({
   selector: 'app-people-list',
@@ -9,27 +10,16 @@ export class PeopleListComponent implements OnInit {
 
   people: any[];
 
-  constructor() { }
+  constructor(private poepleService: PeopleServiceService) { }
 
   ngOnInit() {
-    this.people = [
-      {
-        name: 'Richard Lindner',
-        job: 'Front-end Developer'
-      },
-      {
-        name: 'John Doe',
-        job: 'Front-end Developer'
-      },
-      {
-        name: 'Avatar 2',
-        job: 'Back-end Developer'
-      }
-    ];
+    this.poepleService.getPeople().subscribe((people) => {
+      this.people = people;
+    });
   }
 
   getAvatar(name: string): string {
-    return `https://api.adorable.io/avatars/150/${name}.png`;
+    return this.poepleService.getAvatar(name);
   }
 
 }
