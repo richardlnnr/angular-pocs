@@ -6,7 +6,10 @@
     "start": "./node_modules/.bin/ng serve main-app --host 0.0.0.0 --proxy-config proxy.config.js",
     "build:context-strategy": "ng build context-strategy --prod",
     "pack:context-strategy": "node projects/context-strategy/copy-bundles",
-    "package:context-strategy": "npm run build:context-strategy && npm run pack:context-strategy"
+    "package:context-strategy": "npm run build:context-strategy && npm run pack:context-strategy",
+    "build:basehref-strategy": "ng build basehref-strategy --prod",
+    "pack:basehref-strategy": "node projects/basehref-strategy/copy-bundles",
+    "package:basehref-strategy": "npm run build:basehref-strategy && npm run pack:basehref-strategy"
   },
   "private": true,
   "dependencies": {

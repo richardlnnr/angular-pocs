@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'basehref-strategy'`, () => {
+  it(`should have as title 'custom-app-a'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('basehref-strategy');
+    expect(app.title).toEqual('custom-app-a');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to basehref-strategy!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to custom-app-a!');
   });
 });
