@@ -221,6 +221,138 @@
           }
         }
       }
+    },
+    "basehref-strategy": {
+      "root": "projects/basehref-strategy/",
+      "sourceRoot": "projects/basehref-strategy/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/basehref-strategy",
+            "index": "projects/basehref-strategy/src/index.html",
+            "main": "projects/basehref-strategy/src/main.ts",
+            "polyfills": "projects/basehref-strategy/src/polyfills.ts",
+            "tsConfig": "projects/basehref-strategy/tsconfig.app.json",
+            "assets": [
+              "projects/basehref-strategy/src/favicon.ico",
+              "projects/basehref-strategy/src/assets"
+            ],
+            "styles": [
+              "projects/basehref-strategy/src/styles.scss"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/basehref-strategy/src/environments/environment.ts",
+                  "with": "projects/basehref-strategy/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "basehref-strategy:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "basehref-strategy:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "basehref-strategy:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/basehref-strategy/src/test.ts",
+            "polyfills": "projects/basehref-strategy/src/polyfills.ts",
+            "tsConfig": "projects/basehref-strategy/tsconfig.spec.json",
+            "karmaConfig": "projects/basehref-strategy/karma.conf.js",
+            "styles": [
+              "projects/basehref-strategy/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/basehref-strategy/src/favicon.ico",
+              "projects/basehref-strategy/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/basehref-strategy/tsconfig.app.json",
+              "projects/basehref-strategy/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "basehref-strategy-e2e": {
+      "root": "projects/basehref-strategy-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/basehref-strategy-e2e/protractor.conf.js",
+            "devServerTarget": "basehref-strategy:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "basehref-strategy:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/basehref-strategy-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "main-app"
