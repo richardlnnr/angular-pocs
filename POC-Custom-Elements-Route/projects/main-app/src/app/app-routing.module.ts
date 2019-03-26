@@ -9,7 +9,7 @@ const routes: Routes = [
     component: CustomAppAComponent,
     children: [
       {
-        path: ':id',
+        path: '**',
         component: CustomAppAComponent
       }
     ]
