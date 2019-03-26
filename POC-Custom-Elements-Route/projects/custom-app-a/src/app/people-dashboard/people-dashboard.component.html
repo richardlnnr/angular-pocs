@@ -1,7 +1,7 @@
 <div class="grid-container">
   <mat-grid-list cols="3" rowHeight="150px">
     <mat-grid-tile *ngFor="let person of people" [colspan]="1" [rowspan]="1">
-      <mat-card class="dashboard-card">
+      <mat-card class="dashboard-card clicked" [routerLink]="['./', person.id]">
         <mat-card-header>
           <img mat-card-avatar [src]="getAvatar(person.name)">	
           <mat-card-title>{{person.name}}</mat-card-title>
