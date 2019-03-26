@@ -278,6 +278,138 @@
           }
         }
       }
+    },
+    "context-strategy": {
+      "root": "projects/context-strategy/",
+      "sourceRoot": "projects/context-strategy/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/context-strategy",
+            "index": "projects/context-strategy/src/index.html",
+            "main": "projects/context-strategy/src/main.ts",
+            "polyfills": "projects/context-strategy/src/polyfills.ts",
+            "tsConfig": "projects/context-strategy/tsconfig.app.json",
+            "assets": [
+              "projects/context-strategy/src/favicon.ico",
+              "projects/context-strategy/src/assets"
+            ],
+            "styles": [
+              "projects/context-strategy/src/styles.scss"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/context-strategy/src/environments/environment.ts",
+                  "with": "projects/context-strategy/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "context-strategy:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "context-strategy:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "context-strategy:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/context-strategy/src/test.ts",
+            "polyfills": "projects/context-strategy/src/polyfills.ts",
+            "tsConfig": "projects/context-strategy/tsconfig.spec.json",
+            "karmaConfig": "projects/context-strategy/karma.conf.js",
+            "styles": [
+              "projects/context-strategy/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/context-strategy/src/favicon.ico",
+              "projects/context-strategy/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/context-strategy/tsconfig.app.json",
+              "projects/context-strategy/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "context-strategy-e2e": {
+      "root": "projects/context-strategy-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/context-strategy-e2e/protractor.conf.js",
+            "devServerTarget": "context-strategy:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "context-strategy:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/context-strategy-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "main-app"
