@@ -9,14 +9,14 @@ import {
   MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
   MatListModule, MatGridListModule, MatCardModule, MatMenuModule
 } from '@angular/material';
-import { CustomAppAComponent } from './custom-app-a/custom-app-a.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
+import { ContextStrategyComponent } from './context-strategy/context-strategy.component';
 
 @NgModule({
   declarations: [
     MainNavigationComponent,
-    CustomAppAComponent,
-    MainDashboardComponent
+    MainDashboardComponent,
+    ContextStrategyComponent
   ],
   imports: [
     BrowserModule,

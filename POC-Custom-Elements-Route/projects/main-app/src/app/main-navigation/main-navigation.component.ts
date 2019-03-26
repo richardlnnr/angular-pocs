@@ -12,8 +12,8 @@ export class MainNavigationComponent {
 
   navLinks = [
     {
-      label: 'Custom app a',
-      path: 'custom-app-a'
+      label: 'Context Strategy',
+      path: 'context-strategy'
     },
     {
       label: 'Dashboard',

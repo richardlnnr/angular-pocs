@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CustomAppAComponent } from './custom-app-a.component';
+import { ContextStrategyComponent } from './context-strategy.component';
 
-describe('CustomAppAComponent', () => {
-  let component: CustomAppAComponent;
-  let fixture: ComponentFixture<CustomAppAComponent>;
+describe('ContextStrategyComponent', () => {
+  let component: ContextStrategyComponent;
+  let fixture: ComponentFixture<ContextStrategyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomAppAComponent ]
+      declarations: [ ContextStrategyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CustomAppAComponent);
+    fixture = TestBed.createComponent(ContextStrategyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

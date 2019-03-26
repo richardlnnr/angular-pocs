@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CustomAppAComponent } from './custom-app-a/custom-app-a.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
+import { ContextStrategyComponent } from './context-strategy/context-strategy.component';
 
 const routes: Routes = [
   {
-    path: 'custom-app-a',
-    component: CustomAppAComponent,
+    path: 'context-strategy',
+    component: ContextStrategyComponent,
     children: [
       {
         path: '**',
-        component: CustomAppAComponent
+        component: ContextStrategyComponent
       }
     ]
   },
