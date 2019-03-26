@@ -2,9 +2,9 @@ var concat = require('concat-files');
 var path = require('path');
 const fse = require('fs-extra');
 
-var distPath = path.resolve(__dirname, './dist/context-strategy');
+var distPath = path.resolve(__dirname, '../../dist/context-strategy');
 
-var compileTo = path.resolve(__dirname, '../t3k/context-strategy');
+var compileTo = path.resolve(__dirname, '../../../t3k/context-strategy');
 var bundleJs = path.resolve(__dirname, compileTo + '/bundle.js');
 var bundleCss = path.resolve(__dirname, compileTo + '/bundle.css');
 
@@ -14,7 +14,7 @@ fse.ensureDir(compileTo, err => {
 
 concat(
   [ 
-    `${distPath}/main.js`,
+  `${distPath}/main.js`,
 	`${distPath}/runtime.js`,
 	`${distPath}/scripts.js`
   ], 

@@ -52,7 +52,7 @@ import { PeopleServiceService } from './people-service.service';
 export class AppModule {
   constructor(private injector: Injector) {
     const customElement = createCustomElement(AppComponent, { injector: this.injector });
-    customElements.define('ngx-app-a', customElement);
+    customElements.define('ngx-context-strategy', customElement);
   }
 
   ngDoBootstrap() {}
