@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { PeopleServiceService } from '../people-service.service';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { PeopleServiceService } from '../people-service.service';
 
 @Component({
   selector: 'app-people-detail',
@@ -18,33 +19,26 @@ export class PeopleDetailComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private poepleService: PeopleServiceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const id = params.get('personId');
       this.poepleService.getPerson(id).subscribe((person) => {
-        console.log('Detail', person);
         this.personForm.setValue({
           name: person.name,
           jobRole: person.job
         });
       });
     });
-    // if (this.name) {
-    //   this.personForm.setValue({
-    //     name: this.name
-    //   });
-    // }
-
-    // if (this.jobRole) {
-    //   this.personForm.setValue({
-    //     jobRole: this.jobRole
-    //   });
-    // }
   }
 
   onSubmit() {
+  }
+
+  onReturn() {
+    this.location.back();
   }
 }
