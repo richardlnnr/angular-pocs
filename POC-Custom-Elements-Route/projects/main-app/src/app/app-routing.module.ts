@@ -4,6 +4,7 @@ import { MainDashboardComponent } from './main-dashboard/main-dashboard.componen
 import { ContextStrategyComponent } from './context-strategy/context-strategy.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'context-strategy',
     component: ContextStrategyComponent,

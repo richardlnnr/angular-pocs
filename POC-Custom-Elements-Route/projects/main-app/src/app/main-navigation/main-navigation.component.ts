@@ -12,12 +12,12 @@ export class MainNavigationComponent {
 
   navLinks = [
     {
-      label: 'Context Strategy',
-      path: 'context-strategy'
-    },
-    {
       label: 'Dashboard',
       path: 'dashboard'
+    },
+    {
+      label: 'Context Strategy',
+      path: 'context-strategy'
     }
   ];
 
