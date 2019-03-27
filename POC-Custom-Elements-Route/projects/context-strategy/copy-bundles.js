@@ -14,9 +14,11 @@ fse.ensureDir(compileTo, err => {
 
 concat(
   [ 
-  `${distPath}/main.js`,
-	`${distPath}/runtime.js`,
-	`${distPath}/scripts.js`
+    `${distPath}/main.js`,
+    `${distPath}/runtime.js`,
+    `${distPath}/scripts.js`,
+    `${distPath}/es2015-polyfills.js`,
+    `${distPath}/polyfills.js`
   ], 
   bundleJs, function(err) {
      if (err) {
