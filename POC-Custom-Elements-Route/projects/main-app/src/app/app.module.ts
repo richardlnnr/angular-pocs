@@ -11,6 +11,7 @@ import {
 } from '@angular/material';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { ContextStrategyComponent } from './context-strategy/context-strategy.component';
+import { CustomElementLoaderService } from './custom-element-loader.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { ContextStrategyComponent } from './context-strategy/context-strategy.co
     MatCardModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [
+    CustomElementLoaderService
+  ],
   bootstrap: [MainNavigationComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
