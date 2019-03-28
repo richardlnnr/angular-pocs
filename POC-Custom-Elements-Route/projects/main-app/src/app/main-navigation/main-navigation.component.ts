@@ -18,6 +18,10 @@ export class MainNavigationComponent {
     {
       label: 'Context Strategy',
       path: 'context-strategy'
+    },
+    {
+      label: 'Base Href Strategy',
+      path: 'basehref-strategy'
     }
   ];
 

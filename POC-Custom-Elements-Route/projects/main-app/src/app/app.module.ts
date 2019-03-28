@@ -12,12 +12,14 @@ import {
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { ContextStrategyComponent } from './context-strategy/context-strategy.component';
 import { CustomElementLoaderService } from './custom-element-loader.service';
+import { BasehrefStrategyComponent } from './basehref-strategy/basehref-strategy.component';
 
 @NgModule({
   declarations: [
     MainNavigationComponent,
     MainDashboardComponent,
-    ContextStrategyComponent
+    ContextStrategyComponent,
+    BasehrefStrategyComponent
   ],
   imports: [
     BrowserModule,

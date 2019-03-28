@@ -15,5 +15,4 @@ export class ContextStrategyComponent implements OnInit {
     this.customElementLoader.loadStyles('/static/context-strategy/bundle.css');
   }
 
-
 }
