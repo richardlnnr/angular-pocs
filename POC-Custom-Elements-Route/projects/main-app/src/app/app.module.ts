@@ -10,7 +10,6 @@ import {
   MatListModule, MatGridListModule, MatCardModule, MatMenuModule
 } from '@angular/material';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
-import { ContextStrategyComponent } from './context-strategy/context-strategy.component';
 import { CustomElementLoaderService } from './custom-element-loader.service';
 import { BasehrefStrategyComponent } from './basehref-strategy/basehref-strategy.component';
 
@@ -18,7 +17,6 @@ import { BasehrefStrategyComponent } from './basehref-strategy/basehref-strategy
   declarations: [
     MainNavigationComponent,
     MainDashboardComponent,
-    ContextStrategyComponent,
     BasehrefStrategyComponent
   ],
   imports: [
