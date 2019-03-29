@@ -17,6 +17,7 @@ import { PeopleDashboardComponent } from './people-dashboard/people-dashboard.co
 import { PeopleDetailComponent } from './people-detail/people-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PeopleServiceService } from './people-service.service';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PeopleServiceService } from './people-service.service';
     ReactiveFormsModule
   ],
   providers: [
-    PeopleServiceService
+    PeopleServiceService,
+    { provide: APP_BASE_HREF, useValue: '/basehref-strategy' },
   ],
   entryComponents: [
     AppComponent
