@@ -45,7 +45,7 @@ import { APP_BASE_HREF } from '@angular/common';
   ],
   providers: [
     PeopleServiceService,
-    { provide: APP_BASE_HREF, useValue: '/basehref-strategy' },
+    { provide: APP_BASE_HREF, useValue: getBaseLocation('') },
   ],
   entryComponents: [
     AppComponent
@@ -59,3 +59,9 @@ export class AppModule {
 
   ngDoBootstrap() {}
  }
+
+export function getBaseLocation(defaultRoute: string) {
+  const paths: string[] = location.pathname.split('/').splice(1, 1);
+  const basePath: string = (paths && paths[0]) || defaultRoute;
+  return '/' + basePath;
+}
