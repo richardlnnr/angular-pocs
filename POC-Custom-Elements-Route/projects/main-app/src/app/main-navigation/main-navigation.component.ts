@@ -12,12 +12,16 @@ export class MainNavigationComponent {
 
   navLinks = [
     {
-      label: 'Custom app a',
-      path: 'custom-app-a'
-    },
-    {
       label: 'Dashboard',
       path: 'dashboard'
+    },
+    {
+      label: 'Context Strategy',
+      path: 'context-strategy'
+    },
+    {
+      label: 'Base Href Strategy',
+      path: 'basehref-strategy'
     }
   ];
 

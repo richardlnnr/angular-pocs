@@ -9,14 +9,15 @@ import {
   MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
   MatListModule, MatGridListModule, MatCardModule, MatMenuModule
 } from '@angular/material';
-import { CustomAppAComponent } from './custom-app-a/custom-app-a.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
+import { CustomElementLoaderService } from './custom-element-loader.service';
+import { BasehrefStrategyComponent } from './basehref-strategy/basehref-strategy.component';
 
 @NgModule({
   declarations: [
     MainNavigationComponent,
-    CustomAppAComponent,
-    MainDashboardComponent
+    MainDashboardComponent,
+    BasehrefStrategyComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,9 @@ import { MainDashboardComponent } from './main-dashboard/main-dashboard.componen
     MatCardModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [
+    CustomElementLoaderService
+  ],
   bootstrap: [MainNavigationComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

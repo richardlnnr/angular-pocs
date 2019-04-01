@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CustomAppAComponent } from './custom-app-a/custom-app-a.component';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
+import { BasehrefStrategyComponent } from './basehref-strategy/basehref-strategy.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
-    path: 'custom-app-a',
-    component: CustomAppAComponent,
+    path: 'context-strategy',
+    loadChildren: './context-strategy/context-strategy.module#ContextStrategyModule'
+  },
+  {
+    path: 'basehref-strategy',
+    component: BasehrefStrategyComponent,
     children: [
       {
         path: '**',
-        component: CustomAppAComponent
+        component: BasehrefStrategyComponent
       }
     ]
   },

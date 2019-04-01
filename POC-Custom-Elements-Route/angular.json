@@ -113,37 +113,9 @@
         }
       }
     },
-    "main-app-e2e": {
-      "root": "projects/main-app-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/main-app-e2e/protractor.conf.js",
-            "devServerTarget": "main-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "main-app:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "projects/main-app-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "custom-app-a": {
-      "root": "projects/custom-app-a/",
-      "sourceRoot": "projects/custom-app-a/src",
+    "context-strategy": {
+      "root": "projects/context-strategy/",
+      "sourceRoot": "projects/context-strategy/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
@@ -155,18 +127,18 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/custom-app-a",
-            "index": "projects/custom-app-a/src/index.html",
-            "main": "projects/custom-app-a/src/main.ts",
-            "polyfills": "projects/custom-app-a/src/polyfills.ts",
-            "tsConfig": "projects/custom-app-a/tsconfig.app.json",
+            "outputPath": "dist/context-strategy",
+            "index": "projects/context-strategy/src/index.html",
+            "main": "projects/context-strategy/src/main.ts",
+            "polyfills": "projects/context-strategy/src/polyfills.ts",
+            "tsConfig": "projects/context-strategy/tsconfig.app.json",
             "assets": [
-              "projects/custom-app-a/src/favicon.ico",
-              "projects/custom-app-a/src/assets"
+              "projects/context-strategy/src/favicon.ico",
+              "projects/context-strategy/src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "projects/custom-app-a/src/styles.scss"
+              "projects/context-strategy/src/styles.scss"
             ],
             "scripts": [
               {
@@ -179,8 +151,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/custom-app-a/src/environments/environment.ts",
-                  "with": "projects/custom-app-a/src/environments/environment.prod.ts"
+                  "replace": "projects/context-strategy/src/environments/environment.ts",
+                  "with": "projects/context-strategy/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -205,35 +177,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "custom-app-a:build"
+            "browserTarget": "context-strategy:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "custom-app-a:build:production"
+              "browserTarget": "context-strategy:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "custom-app-a:build"
+            "browserTarget": "context-strategy:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/custom-app-a/src/test.ts",
-            "polyfills": "projects/custom-app-a/src/polyfills.ts",
-            "tsConfig": "projects/custom-app-a/tsconfig.spec.json",
-            "karmaConfig": "projects/custom-app-a/karma.conf.js",
+            "main": "projects/context-strategy/src/test.ts",
+            "polyfills": "projects/context-strategy/src/polyfills.ts",
+            "tsConfig": "projects/context-strategy/tsconfig.spec.json",
+            "karmaConfig": "projects/context-strategy/karma.conf.js",
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "projects/custom-app-a/src/styles.scss"
+              "projects/context-strategy/src/styles.scss"
             ],
             "scripts": [],
             "assets": [
-              "projects/custom-app-a/src/favicon.ico",
-              "projects/custom-app-a/src/assets"
+              "projects/context-strategy/src/favicon.ico",
+              "projects/context-strategy/src/assets"
             ]
           }
         },
@@ -241,8 +212,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/custom-app-a/tsconfig.app.json",
-              "projects/custom-app-a/tsconfig.spec.json"
+              "projects/context-strategy/tsconfig.app.json",
+              "projects/context-strategy/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -251,27 +222,136 @@
         }
       }
     },
-    "custom-app-a-e2e": {
-      "root": "projects/custom-app-a-e2e/",
+    "basehref-strategy": {
+      "root": "projects/basehref-strategy/",
+      "sourceRoot": "projects/basehref-strategy/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/basehref-strategy",
+            "index": "projects/basehref-strategy/src/index.html",
+            "main": "projects/basehref-strategy/src/main.ts",
+            "polyfills": "projects/basehref-strategy/src/polyfills.ts",
+            "tsConfig": "projects/basehref-strategy/tsconfig.app.json",
+            "assets": [
+              "projects/basehref-strategy/src/favicon.ico",
+              "projects/basehref-strategy/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/basehref-strategy/src/styles.scss"
+            ],
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/basehref-strategy/src/environments/environment.ts",
+                  "with": "projects/basehref-strategy/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "basehref-strategy:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "basehref-strategy:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "basehref-strategy:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/basehref-strategy/src/test.ts",
+            "polyfills": "projects/basehref-strategy/src/polyfills.ts",
+            "tsConfig": "projects/basehref-strategy/tsconfig.spec.json",
+            "karmaConfig": "projects/basehref-strategy/karma.conf.js",
+            "styles": [
+              "projects/basehref-strategy/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/basehref-strategy/src/favicon.ico",
+              "projects/basehref-strategy/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/basehref-strategy/tsconfig.app.json",
+              "projects/basehref-strategy/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "basehref-strategy-e2e": {
+      "root": "projects/basehref-strategy-e2e/",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/custom-app-a-e2e/protractor.conf.js",
-            "devServerTarget": "custom-app-a:serve"
+            "protractorConfig": "projects/basehref-strategy-e2e/protractor.conf.js",
+            "devServerTarget": "basehref-strategy:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "custom-app-a:serve:production"
+              "devServerTarget": "basehref-strategy:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "projects/custom-app-a-e2e/tsconfig.e2e.json",
+            "tsConfig": "projects/basehref-strategy-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
